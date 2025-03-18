@@ -197,11 +197,11 @@
       </div>
       <div
         id="iframe-container"
-        style="display: none; width: 100%; height: 100%; overflow: hidden"
+        style="display: none; width: 100%; height: 100vh"
       >
         <iframe
           src="https://morty-akard.notion.site/ebd/331a9bbaef034856acfc7dcba51a7982"
-          style="width: 100%; height: 100%; border: none; overflow: hidden"
+          style="width: 100%; height: 100%; border: none"
           allowfullscreen
         ></iframe>
       </div>
@@ -217,11 +217,17 @@
             const iframeContainer = document.getElementById("iframe-container");
             iframeContainer.style.display = "block";
 
-            const iframe = iframeContainer.querySelector("iframe");
-            iframe.addEventListener("load", function () {
-              // Adjust iframe height to fit its content
-              iframe.style.height =
-                iframe.contentWindow.document.body.scrollHeight + "px";
+            // Add an event listener for scrolling
+            window.addEventListener("scroll", function () {
+              const section = iframeContainer.closest(".section");
+              const sectionRect = section.getBoundingClientRect();
+              if (
+                sectionRect.top <= 0 &&
+                sectionRect.bottom >= window.innerHeight
+              ) {
+                iframeContainer.style.height = "100vh"; // Make iframe section full screen
+                iframeContainer.querySelector("iframe").style.height = "100%";
+              }
             });
           } else {
             document.getElementById("password-error").style.display = "block";
