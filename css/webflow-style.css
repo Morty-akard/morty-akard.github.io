@@ -258,11 +258,11 @@ html {
 }
 
 body {
+  font-family: "Plus Jakarta Sans", sans-serif;
   color: #333;
   background-color: #fff;
   min-height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
 }
@@ -305,7 +305,7 @@ html.w-mod-touch * {
   color: #fff;
   line-height: inherit;
   cursor: pointer;
-  background-color: #3898ec;
+  background-color: var(--primary-color);
   border: 0;
   border-radius: 0;
   padding: 9px 15px;
@@ -2199,6 +2199,8 @@ textarea.w-select {
   --text-field-background: #ffffff14;
   --font--icons-rounded-google-material: "Material Icons Round", sans-serif;
   --font--icons-two-tone-google-material: "Material Icons Two Tone", sans-serif;
+  --primary-color: #3898ec;
+  --secondary-color: #ffbb69;
 }
 
 .w-layout-grid {
