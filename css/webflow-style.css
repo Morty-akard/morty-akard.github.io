@@ -5384,7 +5384,8 @@ blockquote {
 
 .div-block-3 {
   flex-flow: column;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
+  justify-content: center;
   align-items: stretch;
   height: 100%;
   display: flex;
