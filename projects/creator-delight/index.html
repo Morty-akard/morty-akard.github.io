@@ -90,6 +90,15 @@
         hideDecimalForWholeNumbers: false,
       };
     </script>
+    <style>
+      .main-nav {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      .main-nav.hidden {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+    </style>
   </head>
   <body>
     <div
@@ -220,11 +229,19 @@
             const navbar = document.querySelector(".main-nav");
 
             iframe.addEventListener("mouseenter", function () {
-              navbar.style.display = "none";
+              navbar.classList.add("hidden");
+            });
+
+            iframe.addEventListener("mousemove", function (event) {
+              const iframeRect = iframe.getBoundingClientRect();
+              const mouseY = event.clientY - iframeRect.top;
+              if (mouseY <= iframeRect.height * 0.1) {
+                navbar.classList.remove("hidden");
+              }
             });
 
             iframe.addEventListener("mouseleave", function () {
-              navbar.style.display = "block";
+              navbar.classList.remove("hidden");
             });
           } else {
             document.getElementById("password-error").style.display = "block";
