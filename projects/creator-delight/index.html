@@ -98,6 +98,9 @@
         transform: translateY(-100%);
         opacity: 0;
       }
+      .section.expanded {
+        height: 100vh;
+      }
     </style>
   </head>
   <body>
@@ -227,13 +230,16 @@
 
             const iframe = document.querySelector("#iframe-container iframe");
             const navbar = document.querySelector(".main-nav");
+            const section = document.querySelector(".section");
 
             iframe.addEventListener("mouseenter", function () {
               navbar.classList.add("hidden");
+              section.classList.add("expanded");
             });
 
             iframe.addEventListener("mouseleave", function () {
               navbar.classList.remove("hidden");
+              section.classList.remove("expanded");
             });
           } else {
             document.getElementById("password-error").style.display = "block";
