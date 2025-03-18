@@ -214,7 +214,16 @@
           if (password === "9119") {
             document.getElementById("password-container").style.display =
               "none";
-            document.getElementById("iframe-container").style.display = "block";
+            const iframeContainer = document.getElementById("iframe-container");
+            iframeContainer.style.display = "block";
+
+            // Adjust the section height to match the iframe height
+            const section = iframeContainer.closest(".section");
+            iframeContainer
+              .querySelector("iframe")
+              .addEventListener("load", function () {
+                section.style.height = iframeContainer.offsetHeight + "px";
+              });
           } else {
             document.getElementById("password-error").style.display = "block";
           }
