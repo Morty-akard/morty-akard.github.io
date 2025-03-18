@@ -1955,7 +1955,7 @@ textarea.w-select {
 
 [data-nav-menu-open] {
   text-align: center;
-  background: #c8c8c8;
+  background: var(--color--dark);
   min-width: 200px;
   position: absolute;
   top: 100%;
