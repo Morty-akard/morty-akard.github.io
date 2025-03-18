@@ -98,6 +98,9 @@
         transform: translateY(-100%);
         opacity: 0;
       }
+      #iframe-container.fullscreen {
+        height: 100vh;
+      }
     </style>
   </head>
   <body>
@@ -227,9 +230,11 @@
 
             const iframe = document.querySelector("#iframe-container iframe");
             const navbar = document.querySelector(".main-nav");
+            const iframeContainer = document.getElementById("iframe-container");
 
             iframe.addEventListener("mouseenter", function () {
               navbar.classList.add("hidden");
+              iframeContainer.classList.add("fullscreen");
             });
 
             iframe.addEventListener("mousemove", function (event) {
@@ -237,11 +242,13 @@
               const mouseY = event.clientY - iframeRect.top;
               if (mouseY <= iframeRect.height * 0.1) {
                 navbar.classList.remove("hidden");
+                iframeContainer.classList.remove("fullscreen");
               }
             });
 
             iframe.addEventListener("mouseleave", function () {
               navbar.classList.remove("hidden");
+              iframeContainer.classList.remove("fullscreen");
             });
           } else {
             document.getElementById("password-error").style.display = "block";
