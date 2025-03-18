@@ -214,20 +214,19 @@
           if (password === "9119") {
             document.getElementById("password-container").style.display =
               "none";
-            const iframeContainer = document.getElementById("iframe-container");
-            iframeContainer.style.display = "block";
+            document.getElementById("iframe-container").style.display = "block";
 
-            // Add an event listener for scrolling
-            window.addEventListener("scroll", function () {
-              const section = iframeContainer.closest(".section");
-              const sectionRect = section.getBoundingClientRect();
-              if (
-                sectionRect.top <= 0 &&
-                sectionRect.bottom >= window.innerHeight
-              ) {
-                iframeContainer.style.height = "100vh"; // Make iframe section full screen
-                iframeContainer.querySelector("iframe").style.height = "100%";
-              }
+            // Add event listener to hide navbar when scrolling in iframe
+            const iframe = document.querySelector("#iframe-container iframe");
+            iframe.contentWindow.addEventListener("scroll", function () {
+              const navbar = document.querySelector(".main-nav");
+              navbar.style.display = "none";
+            });
+
+            // Show navbar when iframe loses focus
+            iframe.addEventListener("blur", function () {
+              const navbar = document.querySelector(".main-nav");
+              navbar.style.display = "block";
             });
           } else {
             document.getElementById("password-error").style.display = "block";
