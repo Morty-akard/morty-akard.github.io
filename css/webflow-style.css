@@ -5432,6 +5432,13 @@ blockquote {
   place-items: stretch stretch;
 }
 
+.grid-projects-featured {
+  grid-row-gap: 6rem;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  place-items: start;
+}
+
 .company-logo {
   border-radius: 4px;
   height: 100%;
