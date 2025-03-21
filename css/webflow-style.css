@@ -2215,9 +2215,9 @@ textarea.w-select {
 .w-layout-grid-project-page {
   grid-row-gap: 16px;
   grid-column-gap: 16px;
-  grid-template-rows: 2 auto;
+  grid-template-rows: auto auto;
   grid-template-columns: 2fr 1fr;
-  grid-auto-columns: 1fr;
+  grid-auto-columns: 2fr;
   display: grid;
 }
 
