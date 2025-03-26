@@ -6347,6 +6347,10 @@ blockquote {
   .utility-width-125.centered {
     width: 170%;
   }
+
+  .nav-menu-2 {
+    background-color: var(--color--dark);
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -6552,8 +6556,12 @@ blockquote {
   }
 
   .hero-section {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    display: flex;
   }
 
   .i-m-morty {
@@ -6579,9 +6587,12 @@ blockquote {
   }
 
   .grid-layout-hero.tablet-1-column.grid-gap-xxl {
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+    text-align: center;
     grid-template-rows: auto auto;
     grid-template-columns: minmax(0, 2fr);
-    place-items: start center;
+    grid-auto-flow: column;
   }
 
   .utility-margin-top-3rem {
@@ -6598,6 +6609,8 @@ blockquote {
 
   .location {
     text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 
   .utility-margin-top-4rem {
@@ -6977,6 +6990,14 @@ blockquote {
 
   .utility-padding-all-0 {
     padding: 0;
+  }
+
+  .location-icon {
+    font-size: 1.875px;
+  }
+
+  .heading {
+    font-size: 22px;
   }
 
   .company-logo-tabs {
