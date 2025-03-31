@@ -186,15 +186,13 @@
             }
             function O(t, e, r) {
               if (
-                (e
-                  .removeClass(b)
-                  .css({
-                    opacity: "",
-                    transition: "",
-                    transform: "",
-                    width: "",
-                    height: "",
-                  }),
+                (e.removeClass(b).css({
+                  opacity: "",
+                  transition: "",
+                  transform: "",
+                  width: "",
+                  height: "",
+                }),
                 r.addClass(b).each(h.intro),
                 n.redraw.up(),
                 !t.intro)
