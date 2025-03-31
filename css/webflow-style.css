@@ -3661,13 +3661,14 @@ blockquote {
 
 .main-container {
   flex-flow: column;
-  width: 100%;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  justify-content: space-around;
+  align-items: stretch;
 }
 
 .main-container.footer {
-  border-top-color: var(--color--divider);
+  max-width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .fill-cta {
@@ -4442,8 +4443,8 @@ blockquote {
   background-color: var(--color--dark);
   color: #fff;
   border-top: 1px solid #ffffff4d;
-  position: relative;
-  overflow: hidden;
+  padding-top: 8%;
+  padding-bottom: 6%;
 }
 
 .right-third-footer {
@@ -5577,8 +5578,7 @@ blockquote {
 
 .header-div {
   align-items: center;
-  padding-top: 0;
-  padding-bottom: 2em;
+  padding-bottom: 3em;
   display: flex;
 }
 
@@ -5619,11 +5619,17 @@ blockquote {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
   display: flex;
 }
 
 .flex-layout.x-space-between {
   justify-content: space-between;
+}
+
+.flex-layout.x-space-between.tablet-flex-vertical.tablet-x-center.flex-gap-s.utility-margin-top-3rem {
+  max-width: 100%;
 }
 
 .flex-layout.flex-gap-s {
@@ -6028,6 +6034,8 @@ blockquote {
 }
 
 .grid-recomendations {
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
   grid-template-rows: auto auto auto auto;
   grid-template-columns: 1fr;
 }
@@ -6066,6 +6074,29 @@ blockquote {
 .heading-5,
 .recomendation-title {
   margin-bottom: 4rem;
+}
+
+.let-s-work-together {
+  max-width: 100%;
+  margin-top: 0;
+  margin-bottom: 5rem;
+}
+
+.footer-container {
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 100%;
+  max-width: none;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+}
+
+.footer-container.footer {
+  max-width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 @media screen and (min-width: 1920px) {
@@ -6515,6 +6546,11 @@ blockquote {
   .tablet-2-column-parent.tablet-2-column {
     grid-template-columns: 1fr 1fr;
   }
+
+  .let-s-work-together {
+    text-align: left;
+    font-size: 64px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -6555,6 +6591,8 @@ blockquote {
   }
 
   .main-container {
+    justify-content: space-around;
+    align-items: center;
     padding: 2rem 2%;
   }
 
@@ -6677,6 +6715,11 @@ blockquote {
     margin-right: auto;
   }
 
+  .tile-blog.dark-tile.recommendation-card {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
   .card-grid-layout {
     width: 76vw;
   }
@@ -6737,6 +6780,9 @@ blockquote {
   }
 
   .header-div {
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
     font-size: 3svw;
   }
 
@@ -6757,6 +6803,12 @@ blockquote {
     grid-template-rows: auto auto;
     grid-template-columns: minmax(0, 2fr);
     grid-auto-flow: column;
+  }
+
+  .flex-layout {
+    grid-column-gap: 1.7rem;
+    grid-row-gap: 1.7rem;
+    flex-flow: column;
   }
 
   .flex-layout.y-center.flex-gap-xxs.utility-margin-bottom-2rem {
@@ -6800,7 +6852,7 @@ blockquote {
   }
 
   .utility-padding-all-2rem {
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
   .utility-margin-bottom-2rem {
@@ -6853,6 +6905,18 @@ blockquote {
 
   .show-more-less {
     display: block;
+  }
+
+  .let-s-work-together {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 52px;
+  }
+
+  .footer-container {
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 2%;
   }
 }
 
@@ -7247,6 +7311,15 @@ blockquote {
 
   .heading-5 {
     margin-bottom: 2rem;
+  }
+
+  .let-s-work-together {
+    font-size: 46px;
+  }
+
+  .footer-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
