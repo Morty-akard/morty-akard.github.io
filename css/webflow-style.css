@@ -5785,6 +5785,8 @@ blockquote {
   grid-column-gap: 80px;
   grid-row-gap: 80px;
   flex-flow: column;
+  margin-top: 10%;
+  margin-bottom: 10%;
   display: flex;
 }
 
@@ -6097,6 +6099,161 @@ blockquote {
   max-width: 100%;
   margin-left: 5%;
   margin-right: 5%;
+}
+
+.main-container-about {
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.main-container-about.footer {
+  max-width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.section-about {
+  color: var(--color--light-elevation);
+  margin-bottom: 10%;
+  padding-top: 10%;
+}
+
+.section-about.dark {
+  background-color: var(--color--dark);
+  color: var(--color--white);
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
+
+.section-about.dark.template-details {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-about.dark.recomendation-section {
+  background-color: var(--color--dark-elevation);
+}
+
+.section-about.hero-template {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.section-about.hero-works {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.section-about.hero-work-inner {
+  padding-top: 100px;
+}
+
+.section-about.hero-blogs {
+  padding-top: 92px;
+}
+
+.section-about.hero-blog-template {
+  padding-top: 100px;
+}
+
+.section-about.hero-pricing,
+.section-about.hero-product {
+  padding-top: 80px;
+}
+
+.section-about.hero-404 {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.section-about.about-me {
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+.section-about.featured.project-pages {
+  background-color: var(--color--dark);
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
+
+.main-container-projects {
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.main-container-projects.footer {
+  max-width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.section-projects {
+  color: var(--color--light-elevation);
+  margin-top: 0%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.section-projects.dark {
+  background-color: var(--color--dark);
+  color: var(--color--white);
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
+
+.section-projects.dark.template-details {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-projects.dark.recomendation-section {
+  background-color: var(--color--dark-elevation);
+}
+
+.section-projects.hero-template {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.section-projects.hero-works {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.section-projects.hero-work-inner {
+  padding-top: 100px;
+}
+
+.section-projects.hero-blogs {
+  padding-top: 92px;
+}
+
+.section-projects.hero-blog-template {
+  padding-top: 100px;
+}
+
+.section-projects.hero-pricing,
+.section-projects.hero-product {
+  padding-top: 80px;
+}
+
+.section-projects.hero-404 {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.section-projects.about-me {
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+.section-projects.featured.project-pages {
+  background-color: var(--color--dark);
+  padding-top: 8%;
+  padding-bottom: 8%;
 }
 
 @media screen and (min-width: 1920px) {
@@ -6551,6 +6708,22 @@ blockquote {
     text-align: left;
     font-size: 64px;
   }
+
+  .section-about.hero-work-inner {
+    padding-top: 64px;
+  }
+
+  .section-about.hero-blog-template {
+    padding-top: 80px;
+  }
+
+  .section-projects.hero-work-inner {
+    padding-top: 64px;
+  }
+
+  .section-projects.hero-blog-template {
+    padding-top: 80px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -6913,10 +7086,25 @@ blockquote {
     font-size: 52px;
   }
 
-  .footer-container {
+  .footer-container,
+  .main-container-about {
     justify-content: space-around;
     align-items: center;
     padding: 2rem 2%;
+  }
+
+  .section-about.hero-pricing {
+    padding-top: 64px;
+  }
+
+  .main-container-projects {
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 2%;
+  }
+
+  .section-projects.hero-pricing {
+    padding-top: 64px;
   }
 }
 
@@ -7260,11 +7448,12 @@ blockquote {
   }
 
   .section-headers {
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .header-div {
     font-size: 4vw;
+    overflow: clip;
   }
 
   .grid-layout-hero.tablet-1-column.grid-gap-xxl {
@@ -7317,9 +7506,41 @@ blockquote {
     font-size: 46px;
   }
 
-  .footer-container {
+  .footer-container,
+  .main-container-about {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .section-about.hero-works {
+    padding-top: 52px;
+    padding-bottom: 56px;
+  }
+
+  .section-about.hero-blogs {
+    padding-top: 56px;
+  }
+
+  .section-about.hero-blog-template {
+    padding-top: 72px;
+  }
+
+  .main-container-projects {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .section-projects.hero-works {
+    padding-top: 52px;
+    padding-bottom: 56px;
+  }
+
+  .section-projects.hero-blogs {
+    padding-top: 56px;
+  }
+
+  .section-projects.hero-blog-template {
+    padding-top: 72px;
   }
 }
 
