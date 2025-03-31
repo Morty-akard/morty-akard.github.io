@@ -5764,6 +5764,7 @@ blockquote {
 }
 
 .paragraph-about-me {
+  margin-top: 10%;
   grid-column-gap: 40px;
   grid-row-gap: 40px;
   color: var(--color--secondary-text);
@@ -6116,7 +6117,7 @@ blockquote {
 .section-about {
   color: var(--color--light-elevation);
   margin-bottom: 10%;
-  padding-top: 10%;
+  padding-top: 0%;
 }
 
 .section-about.dark {
