@@ -28612,7 +28612,7 @@ spurious results.`);
           useReadQuery: () => n1,
           Observable: () => v.y,
           useReactiveVar: () => nP,
-          ApolloCache: () => tA,
+          ApolloCache: () => tY,
           useQuery: () => nN,
           HttpLink: () => q,
           useSubscription: () => nB,
@@ -28669,7 +28669,7 @@ spurious results.`);
           isApolloError: () => ef.MS,
           split: () => nc,
           empty: () => no,
-          defaultDataIdFromObject: () => tT,
+          defaultDataIdFromObject: () => tz,
           selectHttpOptionsAndBody: () => T.E4,
           useBackgroundQuery: () => n0,
           makeVar: () => tl,
@@ -32353,7 +32353,58 @@ spurious results.`);
             e
           );
         })(),
-        tA = (function () {
+        tA = Object.prototype.hasOwnProperty;
+      function tg(e) {
+        return null == e;
+      }
+      function tz(e, t) {
+        var n = e.__typename,
+          r = e.id,
+          i = e._id;
+        if (
+          "string" == typeof n &&
+          (t &&
+            (t.keyObject = tg(r) ? (tg(i) ? void 0 : { _id: i }) : { id: r }),
+          tg(r) && !tg(i) && (r = i),
+          !tg(r))
+        )
+          return ""
+            .concat(n, ":")
+            .concat(
+              "number" == typeof r || "string" == typeof r
+                ? r
+                : JSON.stringify(r)
+            );
+      }
+      var tT = {
+        dataIdFromObject: tz,
+        addTypename: !0,
+        resultCaching: !0,
+        canonizeResults: !1,
+      };
+      function tO(e) {
+        var t = e.canonizeResults;
+        return void 0 === t ? tT.canonizeResults : t;
+      }
+      var tk = /^[_a-z][_0-9a-z]*/i;
+      function tw(e) {
+        var t = e.match(tk);
+        return t ? t[0] : e;
+      }
+      function tD(e) {
+        return (0, V.s)(e) && !(0, eo.Yk)(e) && !(0, J.k)(e);
+      }
+      function tS(e, t) {
+        var n = (0, em.F)((0, S.kU)(e));
+        return {
+          fragmentMap: n,
+          lookupFragment: function (e) {
+            var r = n[e];
+            return !r && t && (r = t.lookup(e)), r || null;
+          },
+        };
+      }
+      var tY = (function () {
           function e() {
             (this.assumeImmutableResults = !1),
               (this.getFragmentDoc = to(em.Yk));
@@ -32465,76 +32516,25 @@ spurious results.`);
             e
           );
         })(),
-        tg = Object.prototype.hasOwnProperty;
-      function tz(e) {
-        return null == e;
-      }
-      function tT(e, t) {
-        var n = e.__typename,
-          r = e.id,
-          i = e._id;
-        if (
-          "string" == typeof n &&
-          (t &&
-            (t.keyObject = tz(r) ? (tz(i) ? void 0 : { _id: i }) : { id: r }),
-          tz(r) && !tz(i) && (r = i),
-          !tz(r))
-        )
-          return ""
-            .concat(n, ":")
-            .concat(
-              "number" == typeof r || "string" == typeof r
-                ? r
-                : JSON.stringify(r)
-            );
-      }
-      var tO = {
-        dataIdFromObject: tT,
-        addTypename: !0,
-        resultCaching: !0,
-        canonizeResults: !1,
-      };
-      function tk(e) {
-        var t = e.canonizeResults;
-        return void 0 === t ? tO.canonizeResults : t;
-      }
-      var tw = /^[_a-z][_0-9a-z]*/i;
-      function tD(e) {
-        var t = e.match(tw);
-        return t ? t[0] : e;
-      }
-      function tS(e) {
-        return (0, V.s)(e) && !(0, eo.Yk)(e) && !(0, J.k)(e);
-      }
-      function tY(e, t) {
-        var n = (0, em.F)((0, S.kU)(e));
-        return {
-          fragmentMap: n,
-          lookupFragment: function (e) {
-            var r = n[e];
-            return !r && t && (r = t.lookup(e)), r || null;
-          },
-        };
-      }
-      var tN = (function (e) {
-        function t(n, r, i, a) {
-          var o,
-            s = e.call(this, n) || this;
-          if (
-            ((s.message = n),
-            (s.path = r),
-            (s.query = i),
-            (s.variables = a),
-            Array.isArray(s.path))
-          ) {
-            s.missing = s.message;
-            for (var c = s.path.length - 1; c >= 0; --c)
-              s.missing = (((o = {})[s.path[c]] = s.missing), o);
-          } else s.missing = s.path;
-          return (s.__proto__ = t.prototype), s;
-        }
-        return (0, p.ZT)(t, e), t;
-      })(Error);
+        tN = (function (e) {
+          function t(n, r, i, a) {
+            var o,
+              s = e.call(this, n) || this;
+            if (
+              ((s.message = n),
+              (s.path = r),
+              (s.query = i),
+              (s.variables = a),
+              Array.isArray(s.path))
+            ) {
+              s.missing = s.message;
+              for (var c = s.path.length - 1; c >= 0; --c)
+                s.missing = (((o = {})[s.path[c]] = s.missing), o);
+            } else s.missing = s.path;
+            return (s.__proto__ = t.prototype), s;
+          }
+          return (0, p.ZT)(t, e), t;
+        })(Error);
       function tq(e) {
         return e;
       }
@@ -32575,12 +32575,12 @@ spurious results.`);
               return void 0 !== this.lookup(e, !0);
             }),
             (e.prototype.get = function (e, t) {
-              if ((this.group.depend(e, t), tg.call(this.data, e))) {
+              if ((this.group.depend(e, t), tA.call(this.data, e))) {
                 var n = this.data[e];
-                if (n && tg.call(n, t)) return n[t];
+                if (n && tA.call(n, t)) return n[t];
               }
               return "__typename" === t &&
-                tg.call(this.policies.rootTypenamesById, e)
+                tA.call(this.policies.rootTypenamesById, e)
                 ? this.policies.rootTypenamesById[e]
                 : this instanceof tC
                 ? this.parent.get(e, t)
@@ -32588,7 +32588,7 @@ spurious results.`);
             }),
             (e.prototype.lookup = function (e, t) {
               return (t && this.group.depend(e, "__exists"),
-              tg.call(this.data, e))
+              tA.call(this.data, e))
                 ? this.data[e]
                 : this instanceof tC
                 ? this.parent.lookup(e, t)
@@ -32614,7 +32614,7 @@ spurious results.`);
                     Object.keys(a).forEach(function (e) {
                       if (!i || i[e] !== o[e]) {
                         s[e] = 1;
-                        var t = tD(e);
+                        var t = tw(e);
                         t !== e &&
                           !r.policies.hasKeyArgs(o.__typename, t) &&
                           (s[t] = 1),
@@ -32655,7 +32655,7 @@ spurious results.`);
                   };
                 if (
                   (Object.keys(r).forEach(function (c) {
-                    var u = tD(c),
+                    var u = tw(c),
                       d = r[c];
                     if (void 0 !== d) {
                       var l = "function" == typeof t ? t : t[c] || t[u];
@@ -32714,7 +32714,7 @@ spurious results.`);
               var n = !1;
               return (
                 e.id &&
-                  (tg.call(this.data, e.id) &&
+                  (tA.call(this.data, e.id) &&
                     (n = this.delete(e.id, e.fieldName, e.args)),
                   this instanceof tC &&
                     this !== t &&
@@ -32733,7 +32733,7 @@ spurious results.`);
                 n = [];
               return (
                 this.getRootIdSet().forEach(function (t) {
-                  !tg.call(e.policies.rootTypenamesById, t) && n.push(t);
+                  !tA.call(e.policies.rootTypenamesById, t) && n.push(t);
                 }),
                 n.length && (t.__META = { extraRootIds: n.sort() }),
                 t
@@ -32743,7 +32743,7 @@ spurious results.`);
               var t = this;
               if (
                 (Object.keys(this.data).forEach(function (n) {
-                  !(e && tg.call(e, n)) && t.delete(n);
+                  !(e && tA.call(e, n)) && t.delete(n);
                 }),
                 e)
               ) {
@@ -32783,7 +32783,7 @@ spurious results.`);
                 t = this.getRootIdSet(),
                 n = this.toObject();
               t.forEach(function (r) {
-                tg.call(n, r) &&
+                tA.call(n, r) &&
                   (Object.keys(e.findChildRefIds(r)).forEach(t.add, t),
                   delete n[r]);
               });
@@ -32797,7 +32797,7 @@ spurious results.`);
               return r;
             }),
             (e.prototype.findChildRefIds = function (e) {
-              if (!tg.call(this.refs, e)) {
+              if (!tA.call(this.refs, e)) {
                 var t = (this.refs[e] = Object.create(null)),
                   n = this.data[e];
                 if (!n) return t;
@@ -32839,7 +32839,7 @@ spurious results.`);
                     return t + "#" + e;
                   })(e, t)
                 );
-                var n = tD(t);
+                var n = tw(t);
                 n !== t &&
                   this.d(
                     (function (e, t) {
@@ -32940,7 +32940,7 @@ spurious results.`);
             }),
             (t.prototype.findChildRefIds = function (t) {
               var n = this.parent.findChildRefIds(t);
-              return tg.call(this.data, t)
+              return tA.call(this.data, t)
                 ? (0, p.pi)(
                     (0, p.pi)({}, n),
                     e.prototype.findChildRefIds.call(this, t)
@@ -32999,7 +32999,7 @@ spurious results.`);
             (this.knownResults = new (K.mr ? WeakMap : Map)()),
               (this.config = M(e, {
                 addTypename: !1 !== e.addTypename,
-                canonizeResults: tk(e),
+                canonizeResults: tO(e),
               })),
               (this.canon = e.canon || new $()),
               (this.executeSelectionSet = to(
@@ -33082,7 +33082,7 @@ spurious results.`);
                       varString: Z(a),
                       canonizeResults: c,
                     },
-                    tY(r, this.config.fragments)
+                    tS(r, this.config.fragments)
                   ),
                 });
               if (
@@ -33290,7 +33290,7 @@ spurious results.`);
                 return (
                   void 0 === i &&
                     t !== n.storeObject &&
-                    tg.call(t, e[0]) &&
+                    tA.call(t, e[0]) &&
                     (i = tZ(t, e, t$)),
                   (0, m.kG)(void 0 !== i, 4, e.join("."), t),
                   i
@@ -33325,7 +33325,7 @@ spurious results.`);
                   }
                   if ("$" === a) {
                     var u = n.slice(1);
-                    if (i && tg.call(i, u)) {
+                    if (i && tA.call(i, u)) {
                       var d = e.slice(0);
                       return (d[0] = u), tZ(i, d);
                     }
@@ -33420,7 +33420,7 @@ spurious results.`);
               (this.rootIdsByTypename = Object.create(null)),
               (this.rootTypenamesById = Object.create(null)),
               (this.usingPossibleTypes = !1),
-              (this.config = (0, p.pi)({ dataIdFromObject: tT }, e)),
+              (this.config = (0, p.pi)({ dataIdFromObject: tz }, e)),
               (this.cache = this.config.cache),
               this.setRootTypename("Query"),
               this.setRootTypename("Mutation"),
@@ -33489,7 +33489,7 @@ spurious results.`);
                 i && t.setRootTypename("Query", n),
                   a && t.setRootTypename("Mutation", n),
                   o && t.setRootTypename("Subscription", n),
-                  tg.call(t.toBeAdded, n)
+                  tA.call(t.toBeAdded, n)
                     ? t.toBeAdded[n].push(s)
                     : (t.toBeAdded[n] = [s]);
               });
@@ -33558,7 +33558,7 @@ spurious results.`);
                   t.getSupertypeSet(n, !0),
                     e[n].forEach(function (e) {
                       t.getSupertypeSet(e, !0).add(n);
-                      var r = e.match(tw);
+                      var r = e.match(tk);
                       (!r || r[0] !== e) &&
                         t.fuzzySubtypes.set(e, new RegExp(e));
                     });
@@ -33566,7 +33566,7 @@ spurious results.`);
             }),
             (e.prototype.getTypePolicy = function (e) {
               var t = this;
-              if (!tg.call(this.typePolicies, e)) {
+              if (!tA.call(this.typePolicies, e)) {
                 var n = (this.typePolicies[e] = Object.create(null));
                 n.fields = Object.create(null);
                 var r = this.supertypeMap.get(e);
@@ -33647,7 +33647,7 @@ spurious results.`);
                                 if ((0, eo.My)(t) && (0, L.LZ)(t, r)) {
                                   var i = (0, eo.u2)(t);
                                   return (
-                                    tg.call(n, i) &&
+                                    tA.call(n, i) &&
                                     (!t.selectionSet ||
                                       e(t.selectionSet, n[i], r))
                                   );
@@ -33702,7 +33702,7 @@ spurious results.`);
                   : (0, eo.PT)(r, t0(e))),
               !1 === t)
                 ? r
-                : r === tD(t)
+                : r === tw(t)
                 ? t
                 : r + ":" + t;
             }),
@@ -33715,7 +33715,7 @@ spurious results.`);
                     r && (e.typename = r);
                   }
                   var i = this.getStoreFieldName(e),
-                    a = tD(i),
+                    a = tw(i),
                     o = t.store.getFieldValue(n, i),
                     s = this.getFieldPolicy(e.typename, a, !1),
                     c = s && s.read;
@@ -33773,7 +33773,7 @@ spurious results.`);
         })();
       function t6(e, t, n, r, i) {
         var a = e.getStoreFieldName(n),
-          o = tD(a),
+          o = tw(a),
           s = n.variables || r.variables,
           c = r.store,
           u = c.toReference,
@@ -33803,7 +33803,7 @@ spurious results.`);
         return (
           "string" == typeof i
             ? (r = { fieldName: i, from: o > 1 ? a : t })
-            : ((r = (0, p.pi)({}, i)), !tg.call(r, "from") && (r.from = t)),
+            : ((r = (0, p.pi)({}, i)), !tA.call(r, "from") && (r.from = t)),
           void 0 === r.variables && (r.variables = n),
           r
         );
@@ -33815,9 +33815,9 @@ spurious results.`);
             var r = e.getFieldValue(t, "__typename"),
               i = e.getFieldValue(n, "__typename");
             if (r && i && r !== i) return n;
-            if ((0, eo.Yk)(t) && tS(n)) return e.merge(t.__ref, n), t;
-            if (tS(t) && (0, eo.Yk)(n)) return e.merge(t, n.__ref), n;
-            if (tS(t) && tS(n)) return (0, p.pi)((0, p.pi)({}, t), n);
+            if ((0, eo.Yk)(t) && tD(n)) return e.merge(t.__ref, n), t;
+            if (tD(t) && (0, eo.Yk)(n)) return e.merge(t, n.__ref), n;
+            if (tD(t) && tD(n)) return (0, p.pi)((0, p.pi)({}, t), n);
           }
           return n;
         };
@@ -33863,7 +33863,7 @@ spurious results.`);
                       variables: o,
                       varString: Z(o),
                     },
-                    tY(r, this.fragments)
+                    tS(r, this.fragments)
                   ),
                   {
                     overwrite: !!s,
@@ -33946,7 +33946,7 @@ spurious results.`);
                     ),
                     h = void 0;
                   n.selectionSet &&
-                    ((0, eo.Yk)(M) || tS(M)) &&
+                    ((0, eo.Yk)(M) || tD(M)) &&
                     (h = d("__typename", M));
                   var m = s.getMergeFunction(u, n.name.value, h);
                   m ? (p.info = { field: n, typename: u, merge: m }) : ni(o, f),
@@ -34077,7 +34077,7 @@ spurious results.`);
               if (e.map.size && !(0, eo.Yk)(n)) {
                 var o,
                   s,
-                  c = !(0, J.k)(n) && ((0, eo.Yk)(t) || tS(t)) ? t : void 0,
+                  c = !(0, J.k)(n) && ((0, eo.Yk)(t) || tD(t)) ? t : void 0,
                   u = n;
                 c && !i && (i = [(0, eo.Yk)(c) ? c.__ref : c]);
                 var d = function (e, t) {
@@ -34139,7 +34139,7 @@ spurious results.`);
             (n.assumeImmutableResults = !0),
             (n.makeVar = tl),
             (n.txCount = 0),
-            (n.config = M(tO, t)),
+            (n.config = M(tT, t)),
             (n.addTypename = !!n.config.addTypename),
             (n.policies = new t5({
               cache: n,
@@ -34170,7 +34170,7 @@ spurious results.`);
                 cache: this,
                 addTypename: this.addTypename,
                 resultCacheMaxSize: this.config.resultCacheMaxSize,
-                canonizeResults: tk(this.config),
+                canonizeResults: tO(this.config),
                 canon: e ? void 0 : n && n.canon,
                 fragments: r,
               })),
@@ -34239,7 +34239,7 @@ spurious results.`);
             }
           }),
           (t.prototype.modify = function (e) {
-            if (tg.call(e, "id") && !e.id) return !1;
+            if (tA.call(e, "id") && !e.id) return !1;
             var t = e.optimistic ? this.optimisticData : this.data;
             try {
               return ++this.txCount, t.modify(e.id || "ROOT_QUERY", e.fields);
@@ -34299,7 +34299,7 @@ spurious results.`);
           }),
           (t.prototype.evict = function (e) {
             if (!e.id) {
-              if (tg.call(e, "id")) return !1;
+              if (tA.call(e, "id")) return !1;
               e = (0, p.pi)((0, p.pi)({}, e), { id: "ROOT_QUERY" });
             }
             try {
@@ -34417,7 +34417,7 @@ spurious results.`);
           }),
           t
         );
-      })(tA);
+      })(tY);
       l || (l = {});
       var no = _.i.empty,
         ns = _.i.from,
