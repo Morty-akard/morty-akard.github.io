@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Site consistency audit
+        run: node scripts/site-consistency-audit.mjs
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

@@ -22,7 +22,7 @@
       property="og:description"
     />
     <meta
-      content="images/screenshot-202025-03-15-20at-204.06.57-e2-80-afpm.png"
+      content="https://morty-akard.github.io/images/screenshot-202025-03-15-20at-204.06.57-e2-80-afpm.png"
       property="og:image"
     />
     <meta
@@ -34,14 +34,17 @@
       property="twitter:description"
     />
     <meta
-      content="images/screenshot-202025-03-15-20at-204.06.57-e2-80-afpm.png"
+      content="https://morty-akard.github.io/images/screenshot-202025-03-15-20at-204.06.57-e2-80-afpm.png"
       property="twitter:image"
     />
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
+    <link rel="canonical" href="https://morty-akard.github.io/" />
+    <meta property="og:url" content="https://morty-akard.github.io/" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
     <link href="css/webflow-style.css" rel="stylesheet" type="text/css" />
+    <link href="css/site-chrome.css" rel="stylesheet" type="text/css" />
     <style>
       @media (max-width: 767px) and (min-width: 480px) {
         html.w-mod-js:not(.w-mod-ix)
@@ -91,6 +94,21 @@
     </script>
     <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="images/app-icon.png" rel="apple-touch-icon" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Morty Akard",
+        "url": "https://morty-akard.github.io/",
+        "jobTitle": "Product Designer",
+        "email": "mailto:Morty.akard@gmail.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/morty-akard/",
+          "https://medium.com/@morty.akard",
+          "https://github.com/Akards"
+        ]
+      }
+    </script>
     <script type="text/javascript">
       window.__WEBFLOW_CURRENCY_SETTINGS = {
         currencyCode: "USD",
@@ -105,40 +123,37 @@
     </script>
   </head>
   <body class="body">
-    <div
-      id="main-nav-bar"
-      data-animation="default"
-      data-collapse="medium"
-      data-duration="400"
-      data-easing="ease"
-      data-easing2="ease"
-      role="banner"
-      class="main-nav w-nav"
-    >
-      <div class="w-layout-blockcontainer main-nav-inner w-container">
-        <a
-          href="/"
-          aria-current="page"
-          class="main-nav__logo w-nav-brand w--current"
-          ><div class="logo-text">Morty Akard</div></a
-        >
-        <div class="div-block-2">
-          <div class="menu-button-2 w-nav-button">
-            <div class="icon w-icon-nav-menu"></div>
-          </div>
-          <nav role="navigation" class="nav-menu-2 w-nav-menu">
-            <a
-              href="/"
-              aria-current="page"
-              class="navbar-nav-link w-nav-link w--current"
-              >Home</a
-            ><a href="/projects" class="navbar-nav-link w-nav-link">Projects</a
-            ><a href="/about" class="navbar-nav-link w-nav-link">About</a
-            ><a href="/contact" class="navbar-nav-link w-nav-link">Contact</a>
-          </nav>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-nav-section">
+      <nav class="floating-nav" aria-label="Primary">
+        <a href="/" class="floating-nav__brand">
+          <span class="floating-nav__logo">Morty Akard</span>
+          <span class="floating-nav__divider" aria-hidden="true"></span>
+          <span class="floating-nav__badge">
+            <span class="floating-nav__badge-dot" aria-hidden="true"></span>
+            <span class="floating-nav__badge-text">Available</span>
+          </span>
+        </a>
+        <div class="floating-nav__menu">
+            <a href="/" class="floating-nav__link is-active" aria-current="page"><span>Home</span><span class="floating-nav__link-underline" aria-hidden="true"></span></a>
+            <a href="/projects" class="floating-nav__link"><span>Projects</span><span class="floating-nav__link-underline" aria-hidden="true"></span></a>
+            <a href="/about" class="floating-nav__link"><span>About</span><span class="floating-nav__link-underline" aria-hidden="true"></span></a>
+            <a href="/contact" class="floating-nav__link"><span>Contact</span><span class="floating-nav__link-underline" aria-hidden="true"></span></a>
+          <a href="/contact" class="floating-nav__cta">Get in Touch <img class="floating-nav__cta-icon" src="images/site/nav-arrow-right.svg" alt="" width="12" height="12" /></a>
         </div>
-      </div>
-    </div>
+        <button class="floating-nav__toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span class="floating-nav__toggle-bars" aria-hidden="true"></span>
+        </button>
+        <div class="floating-nav__mobile-panel">
+          <a href="/" class="floating-nav__link is-active">Home</a>
+          <a href="/projects" class="floating-nav__link">Projects</a>
+          <a href="/about" class="floating-nav__link">About</a>
+          <a href="/contact" class="floating-nav__link">Contact</a>
+          <a href="/contact" class="floating-nav__cta">Get in Touch</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main-content">
     <section
       data-record-id="318aabca-5a78-83ec-11f9-a7461b06b80a"
       data-copilot="true"
@@ -153,16 +168,16 @@
             class="div-block-3 w-node-_53fbaa96-e4e2-21ef-5315-d31db22a641a-849a1dae"
           >
             <div class="name-career">
-              <h2 class="i-m-morty">
+              <h1 class="i-m-morty">
                 <span class="text-span-3">I&#x27;m</span> Morty
-              </h2>
-              <h3 class="career">
+              </h1>
+              <p class="career">
                 <span class="text-span-4">A Product</span> Designer
-              </h3>
+              </p>
             </div>
             <div class="location">
-              <h6 class="location-icon">location_on</h6>
-              <h6 class="heading">Melbourne . Australia</h6>
+              <span class="location-icon" aria-hidden="true">location_on</span>
+              <p class="heading">Melbourne · Australia</p>
             </div>
           </div>
           <img
@@ -209,15 +224,14 @@
     >
       <div class="w-layout-blockcontainer featured_case-studies w-container">
         <div class="header-div">
-          <h4 class="section-headers">
+          <h2 class="section-headers">
             <span class="text-span-5">Featured</span> <br />Case studies
-          </h4>
+          </h2>
         </div>
         <div class="w-layout-grid grid">
           <a
             data-wf--case-study-card--variant="base"
             href="/projects/creator-delight/"
-            target="_blank"
             class="casestudy-card featured-projects-page w-inline-block"
             ><div class="w-layout-grid card-grid-layout">
               <img
@@ -295,7 +309,6 @@
           ><a
             data-wf--case-study-card--variant="base"
             href="/projects/gamers_compete_with_ease/"
-            target="_blank"
             class="casestudy-card featured-projects-page w-inline-block"
             ><div class="w-layout-grid card-grid-layout">
               <img
@@ -371,7 +384,44 @@
         </div>
       </div>
     </section>
-    <section
+        <section class="writing-section section dark" aria-labelledby="writing-heading">
+      <div class="writing-section__header">
+        <p class="writing-section__eyebrow">Writing</p>
+        <h2 id="writing-heading" class="writing-section__title">Articles &amp; Design Writing</h2>
+      </div>
+      <div class="article-grid">
+        <a class="article-card" href="https://www.designsystemscollective.com/can-ai-code-using-your-design-system-figma-might-be-closer-than-you-think" target="_blank" rel="noopener noreferrer">
+          <div class="article-card__cover" style="background-image:url('images/articles/ai-design-system.png')"></div>
+          <div class="article-card__body">
+            <p class="article-card__source">Medium · Design Systems Collective</p>
+            <h3 class="article-card__title">Can AI Code Using Your Design System? Figma Might Be Closer Than You Think</h3>
+            <p class="article-card__excerpt">An exploration of how Figma&#x27;s Code Connect bridges design tokens and production code — and what it could mean for AI-assisted component generation.</p>
+            <div class="article-card__tags">
+              <span class="article-tag article-tag--meta">Article</span>
+              <span class="article-tag">AI + Design</span>
+              <span class="article-tag">Design Systems</span>
+            </div>
+            <span class="article-card__cta">Read on Medium →</span>
+          </div>
+        </a>
+        <a class="article-card" href="https://www.designsystemscollective.com/designing-a-custom-book-card-that-still-plays-nice-with-the-system-6de33455bd61" target="_blank" rel="noopener noreferrer">
+          <div class="article-card__cover" style="background-image:url('images/articles/book-card.png')"></div>
+          <div class="article-card__body">
+            <p class="article-card__source">Medium · Design Systems Collective</p>
+            <h3 class="article-card__title">Designing a Custom Book Card That Still Plays Nice With the System</h3>
+            <p class="article-card__excerpt">How to build expressive, context-specific components that feel bespoke without compromising the consistency of your design system.</p>
+            <div class="article-card__tags">
+              <span class="article-tag article-tag--meta">Article</span>
+              <span class="article-tag">UX</span>
+              <span class="article-tag">Design Systems</span>
+            </div>
+            <span class="article-card__cta">Read on Medium →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+<section
       id="recomendation-section"
       data-record-id="40bcf909-0923-efe7-dc56-e8e8942e635d"
       data-copilot="true"
@@ -379,7 +429,7 @@
     >
       <div class="w-layout-blockcontainer main-container w-container">
         <div class="header-div">
-          <h3 class="section-headers">Recommendations</h3>
+          <h2 class="section-headers">Recommendations</h2>
         </div>
         <div class="w-layout-grid grid-recomendations">
           <div
@@ -414,7 +464,7 @@
                 </div>
               </div>
               <p
-                id="recomendation-main-text"
+                id="recommendation-text-pieter"
                 data-w-id="a161d090-79bf-e8ff-4f0c-e142809c834a"
                 class="recommendation-main-text"
               >
@@ -438,13 +488,11 @@
                 class="show-more-less"
               >
                 <div
-                  id="show-more-less"
                   class="recommendation-show-more-button"
                 >
                   Show more
                 </div>
                 <div
-                  id="show-more-less"
                   class="recommendation-show-less-button"
                 >
                   Show less
@@ -492,7 +540,7 @@
                   </p>
                 </div>
               </div>
-              <p id="recomendation-main-text" class="recommendation-main-text">
+              <p id="recommendation-text-pouya" class="recommendation-main-text">
                 To whom it may concern,<br />&quot;I am pleased to write this
                 recommendation letter for Morteza Akbarinejad, who has been our
                 product designer at Alpha Company on Arium project, the cloud
@@ -510,13 +558,11 @@
               </p>
               <div class="show-more-less">
                 <div
-                  id="show-more-less"
                   class="recommendation-show-more-button"
                 >
                   Show more
                 </div>
                 <div
-                  id="show-more-less"
                   class="recommendation-show-less-button"
                 >
                   Show less
@@ -563,9 +609,8 @@
                 </div>
               </div>
               <p
-                id="recomendation-main-text"
-                style="height: 15rem"
-                class="recommendation-main-text"
+                id="recommendation-text-hamed"
+                class="recommendation-main-text is-collapsed"
               >
                 I highly recommend Morteza for his expertise in UX/UI and
                 product design. With a wealth of knowledge in creating complex
@@ -580,13 +625,11 @@
                 class="show-more-less"
               >
                 <div
-                  id="show-more-less"
                   class="recommendation-show-more-button"
                 >
                   Show more
                 </div>
                 <div
-                  id="show-more-less"
                   class="recommendation-show-less-button"
                 >
                   Show less
@@ -633,9 +676,8 @@
                 </div>
               </div>
               <p
-                id="recomendation-main-text"
-                style="height: 15rem"
-                class="recommendation-main-text"
+                id="recommendation-text-maryam"
+                class="recommendation-main-text is-collapsed"
               >
                 Morteza is an exceptional product designer who brings a wealth
                 of knowledge and experience to every project he works on. His
@@ -652,13 +694,11 @@
                 class="show-more-less"
               >
                 <div
-                  id="show-more-less"
                   class="recommendation-show-more-button"
                 >
                   Show more
                 </div>
                 <div
-                  id="show-more-less"
                   class="recommendation-show-less-button"
                 >
                   Show less
@@ -672,42 +712,21 @@
         </div>
       </div>
     </section>
-    <footer
-      id="footer"
-      data-copilot="true"
-      data-record-id="2f16b64e-6779-ba0a-81d2-bf7a6fa5394b"
-      data-wf--footer--variant="base"
-      class="footer"
-    >
-      <div class="w-layout-blockcontainer footer-container w-container">
-        <h1
-          data-w-id="eaffbef0-b4e4-d9b2-5bb1-55d9b93d8204"
-          class="let-s-work-together"
-        >
-          Let&#x27;s Work Together<br />
-        </h1>
-        <div class="flex-layout">
-          <a
-            href="mailto:Morty.akard@gmail.com"
-            class="text-link email w-inline-block"
-            ><p class="body-big">Morty.akard@gmail.com</p></a
-          >
-          <ul
-            role="list"
-            class="flex-layout y-center x-center flex-gap-xs wrap utility-margin-bottom-0 utility-padding-all-0 w-list-unstyled"
-          >
-            <li class="utility-margin-bottom-0">
-              <a
-                href="https://www.linkedin.com/in/morty-akard/"
-                target="_blank"
-                class="text-link utility-text-decoration-none w-inline-block"
-                ><div class="text-block-7">LinkedIn</div></a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
+    </main>
+        <footer id="footer" class="site-footer">
+      <h2 class="site-footer__title">Let&#x27;s Work Together</h2>
+      <a class="site-footer__email" href="mailto:Morty.akard@gmail.com">Morty.akard@gmail.com</a>
+      <ul class="site-footer__social">
+        <li><a href="https://www.linkedin.com/in/morty-akard/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li class="site-footer__dot" aria-hidden="true"></li>
+        <li><a href="https://medium.com/@morty.akard" target="_blank" rel="noopener noreferrer">Medium</a></li>
+        <li class="site-footer__dot" aria-hidden="true"></li>
+        <li><a href="https://github.com/Akards" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <hr class="site-footer__rule" />
+      <p class="site-footer__copy">&copy; 2026 Morty Akard</p>
     </footer>
+
     <script src="js/jquery.js" type="text/javascript"></script>
     <script
       src="js/webflow.schunk.aab5e853dd59cf2c.js"
@@ -718,5 +737,6 @@
       type="text/javascript"
     ></script>
     <script src="js/webflow-script.js" type="text/javascript"></script>
+      <script src="js/site-chrome.js" type="text/javascript"></script>
   </body>
 </html>
