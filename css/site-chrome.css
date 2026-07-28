@@ -37,9 +37,9 @@ body .w-container {
 
 .floating-nav {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
   height: 72px;
   padding: 0 24px;
@@ -50,11 +50,28 @@ body .w-container {
 }
 
 .floating-nav__brand {
+  grid-column: 1;
+  justify-self: start;
   display: flex;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
   text-decoration: none;
+}
+
+.floating-nav__links {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.floating-nav__cta {
+  grid-column: 3;
+  justify-self: end;
+  margin-left: 0;
 }
 
 .floating-nav__logo {
@@ -96,15 +113,6 @@ body .w-container {
   color: var(--status-available);
 }
 
-.floating-nav__menu {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-width: 0;
-}
-
 .floating-nav__link {
   display: flex;
   flex-direction: column;
@@ -143,7 +151,6 @@ body .w-container {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-left: auto;
   padding: 10px 20px;
   border: 1.5px solid var(--accent-orange);
   border-radius: 8px;
@@ -171,6 +178,8 @@ body .w-container {
 
 .floating-nav__toggle {
   display: none;
+  grid-column: 3;
+  justify-self: end;
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -445,7 +454,7 @@ body .w-container {
     --section-pad-y: 80px;
   }
 
-  .floating-nav__menu,
+  .floating-nav__links,
   .floating-nav__cta {
     display: none;
   }
