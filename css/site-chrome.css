@@ -485,10 +485,6 @@ body .w-container {
   border: 1px solid var(--border-subtle);
 }
 
-.tile-blog.dark-tile.recommendation-card:hover {
-  transform: translateY(-2px);
-}
-
 @media (prefers-reduced-motion: reduce) {
   :is(
     .article-card,
@@ -939,4 +935,48 @@ main {
   ) {
     transition-duration: 0.01ms !important;
   }
+
+  a.casestudy-card:hover,
+  .tile-blog.dark-tile.recommendation-card:hover {
+    border-color: var(--color--accent, #ffbb69);
+    outline-color: var(--color--accent, #ffbb69);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  }
+}
+
+/* Featured case study cards (home + projects) — match .article-card hover */
+a.casestudy-card {
+  display: block;
+  width: 100%;
+  max-width: none;
+  position: relative;
+  z-index: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease,
+    outline-color 0.2s ease;
+}
+
+a.casestudy-card:hover {
+  border-color: var(--color--accent, #ffbb69);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  z-index: 2;
+}
+
+/* Recommendation tiles (Webflow uses outline, not border) */
+.tile-blog.dark-tile.recommendation-card {
+  position: relative;
+  z-index: 0;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease,
+    outline-color 0.2s ease;
+}
+
+.tile-blog.dark-tile.recommendation-card:hover {
+  border-color: var(--color--accent, #ffbb69);
+  outline-color: var(--color--accent, #ffbb69);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  z-index: 2;
 }
