@@ -452,6 +452,46 @@ body .w-container {
   color: var(--color--accent);
 }
 
+/* Shared hover: match .article-card (accent border + slight lift) */
+:is(
+  .article-card,
+  .cs-related-card,
+  .casestudy-card,
+  .tile-blog.dark-tile.recommendation-card
+) {
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+:is(
+  .article-card,
+  .cs-related-card,
+  .casestudy-card,
+  .tile-blog.dark-tile.recommendation-card
+):hover {
+  border-color: var(--color--accent);
+  transform: translateY(-2px);
+}
+
+.casestudy-card {
+  border: 1px solid var(--border-subtle);
+}
+
+.tile-blog.dark-tile.recommendation-card {
+  border: 1px solid var(--border-subtle);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    .article-card,
+    .cs-related-card,
+    .casestudy-card,
+    .tile-blog.dark-tile.recommendation-card
+  ):hover,
+  .case-study-page :is(.cs-card, .cs-fact, .cs-measure, .cs-hero-metric, .cs-flow__step):hover {
+    transform: none;
+  }
+}
+
 /* ---- Contact form refinements ---- */
 
 .contact-form-modern .w-input,
@@ -761,7 +801,8 @@ main {
 }
 
 .article-card:hover {
-  border-color: rgba(244, 117, 54, 0.72);
+  border-color: var(--color--accent);
+  transform: translateY(-2px);
 }
 
 .page-title {
